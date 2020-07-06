@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    tools:context=".screens.DetailsActivity.DetailsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+
+        <ImageView
+            android:id="@+id/moviePosterImageView"
+            android:layout_width="195dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/animated1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ProgressBar
+            android:id="@+id/moviePosterProgressBar"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/moviePosterImageView"
+            app:layout_constraintEnd_toStartOf="@+id/moviePosterImageView"
+            app:layout_constraintStart_toEndOf="@+id/moviePosterImageView"
+            app:layout_constraintTop_toBottomOf="@+id/moviePosterImageView" />
+
+        <TextView
+            android:id="@+id/voteAverageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/moviePosterImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/moviePosterImageView"
+            app:layout_constraintTop_toBottomOf="@+id/moviePosterImageView"
+            tools:text="8/10" />
+
+        <TextView
+            android:id="@+id/originalLanguageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/voteAverageTextView"
+            app:layout_constraintStart_toEndOf="@+id/voteAverageTextView"
+            app:layout_constraintTop_toBottomOf="@+id/voteAverageTextView"
+            tools:text="English" />
+
+        <TextView
+            android:id="@+id/releaseDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/originalLanguageTextView"
+            app:layout_constraintStart_toEndOf="@+id/originalLanguageTextView"
+            app:layout_constraintTop_toBottomOf="@+id/originalLanguageTextView"
+            tools:text="2020-04-02" />
+        <ImageButton
+            android:id="@+id/favouriteImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/releaseDateTextView"
+            app:layout_constraintRight_toRightOf="@id/releaseDateTextView"
+            app:layout_constraintLeft_toLeftOf="@id/releaseDateTextView"
+            android:background="@android:color/transparent"/>
+        <TextView
+            android:id="@+id/overviewLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Overview"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimaryText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/moviePosterImageView" />
+
+        <TextView
+            android:id="@+id/overviewTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingLeft="8dp"
+            android:paddingEnd="8dp"
+            android:paddingRight="8dp"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/overviewLabel"
+            app:layout_constraintTop_toBottomOf="@+id/overviewLabel"
+            tools:text="TextView" />
+        <TextView
+            android:id="@+id/trailersLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Trailers"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimaryText"
+            app:layout_constraintStart_toStartOf="@+id/overviewLabel"
+            app:layout_constraintTop_toBottomOf="@+id/overviewTextView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/trailersRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/overviewTextView"
+            app:layout_constraintTop_toBottomOf="@+id/trailersLabel"
+            />
+
+        <TextView
+            android:id="@+id/reviewsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Reviews"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimaryText"
+            app:layout_constraintStart_toStartOf="@+id/trailersLabel"
+            app:layout_constraintTop_toBottomOf="@+id/trailersRecyclerView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reviewsRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/trailersRecyclerView"
+            app:layout_constraintTop_toBottomOf="@+id/reviewsLabel"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
